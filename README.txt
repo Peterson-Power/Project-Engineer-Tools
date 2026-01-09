@@ -1,18 +1,16 @@
-Version 1.9
+Version 2.0
 
-Although this application is written in python, all that is needed to run this script is to download and run the application
-
-I've provided the python source code in case you want to fork it. But the code is completely independent of the application.
+Although this application is written in python, nothing additional is needed to run this application
 
 
-Keep in mind the script runs off 3 assumptions. Not fulfilling all of these will break the process
-1: All bookmarks have a title and are assigned to a page 
-2: No child bookmarks will be on a page previous to their parent
-3: There will be 4 bookmarks before the table of contents(title page, Peterson power page, 2x territory maps)
+This script runs off 4 assumptions. Not fulfilling one of these will break the process:
+1. The PDF is not open in a reader
+2: All bookmarks have a title and are assigned to a page (you will get an error like "int < none" if this is not done) 
+3: No child bookmarks will be on a page previous to their parent
+4. There is at least 1 more bookmark than the cutoff value (the script will ignore the first x number of bookmarks, so don't have less than that)
 
 
-The script will keep the structure of the rest of the bookmarks and use it to generate a TOC on the first page of the new pdf. You will need to reorder the PDF to put the TOC to put it directly behind the BOM. 
 
-Currently the TOC does not contain clickable links but it hopefully will soon, work permitting.
+The script will use the rest of the bookmarks and use it to generate a TOC on the first page(s) of the new pdf. You might need to reorder the PDF to have the page numbers match the bookmark cutoff.
 
 JST
